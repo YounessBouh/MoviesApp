@@ -1,0 +1,29 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          Update Category
+        </div>
+        <div class="card-body">
+          <form [formGroup]="UpdateCategory" (ngSubmit)="update()" >
+
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="name"  placeholder="name"  autocomplete="off">
+              <span *ngIf="name.touched && name.errors?.required" class="error-block">Please provide email</span>
+           </div>
+
+            <button [disabled]="!UpdateCategory.valid" type="submit" class="btn btn-secondary">Update</button>
+            <button type="submit" class="btn btn-black">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-3" style="margin-bottom: 400px;"></div>
+  </div>
+</div>
+
+
+

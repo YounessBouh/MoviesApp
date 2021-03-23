@@ -1,0 +1,37 @@
+<div class="container" style="margin-top: 100px;">
+  <form [formGroup]="UpdateMovie"  (ngSubmit)="Update()">
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label >Title</label>
+          <input type="text" class="form-control"  placeholder="Enter Movie Title" formControlName="title" >
+        </div>
+
+        <div class="form-group">
+          <label >Upload Movie Picture</label>
+          <input type="file" class="form-control"  placeholder="Enter Movie Picture"   (change)="onPictureSelected($event)">
+          <img [src]="path+picture" alt="oops"  class="rounded-circle" height="100">
+        </div>
+
+        <div class="form-group">
+          <label >Upload Movie Video (should be less than 7kb)</label>
+          <input type="file" class="form-control"  placeholder="Enter Movie Video"  (change)="onMovieSelected($event)" >
+          <video width="300" height="180"  controls  id="myVideo">
+            <source src="" id="mov" type="video/mp4" >
+          </video>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label >Description</label>
+          <textarea class="form-control"  cols="30" rows="10" formControlName="description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-block btn-dark">Add New Movie</button>
+    </div>
+
+    </div>
+  </form>
+  </div>

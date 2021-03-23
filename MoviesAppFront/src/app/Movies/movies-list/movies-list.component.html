@@ -1,0 +1,25 @@
+<div class="album py-5 bg-light" class="movieList">
+  <div class="container">
+    <button class="btn btn-outline-info" (click)="SelectSF()">Science Fiction</button>
+    <button class="btn btn-outline-info ml-3" (click)="SelectDR()" > Dramat </button>
+    <button class="btn btn-outline-info ml-3" (click)="SelectAD()" >Thriller</button>
+    <button class="btn btn-outline-info ml-3" (click)="SelectAC()" >Actions</button>
+    <button class="btn btn-outline-info ml-3" (click)="SelectDO()" >Documnetry</button>
+
+
+      <div class="row" style="margin-top: 20px;">
+          <div class="col-md-4" *ngFor="let movie of movies|filter:filterByCategory:'categoryId'">
+            <div class="card mb-4 box-shadow">
+              <a [routerLink]="['/Movies',movie.id]">
+                <img class="card-img-top" src="{{path+movie.picture}}" alt="Card image cap" height="280" width="20">
+              </a>
+
+              <div class="card-body" style="text-align: center;background-color:#cd853f;">
+                <p class="card-text" style="font-size: 15px;font-weight:bold;">
+                 <strong >{{movie.title}}</strong>
+                </p>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>>

@@ -1,0 +1,28 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-outline-primary mb-3" routerLink="/NewActor">Add New Actor</button>
+      <table class="table">
+        <tr>
+          <th>Actor's Name</th>
+          <th>Picture</th>
+          <th>Actions</th>
+        </tr>
+        <tbody>
+         <tr *ngFor="let actor of actors">
+           <td>{{actor.actorName}}</td>
+           <td>
+             <img [src]="path+actor.actorPicture" alt="oops" height="100"  class="rounded-circle">
+           </td>
+           <td>
+             <button class="btn btn-primary" >Update</button>
+             <button class="btn btn-danger ml-2" (click)="Delete(actor.id)">Delete</button>
+           </td>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6"></div>
+
+  </div>
+</div>

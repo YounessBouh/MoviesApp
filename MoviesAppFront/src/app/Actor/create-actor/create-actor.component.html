@@ -1,0 +1,19 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <form [formGroup]="CreateActor" (ngSubmit)="Create()">
+      <div class="form-group">
+        <label >Actor Name</label>
+        <input type="text" class="form-control"  placeholder="Enter Actor Name" formControlName="ActorName">
+        <p *ngIf="ActorName.touched && ActorName.errors?.reuired">this field is reuired</p>
+      </div>
+      <div class="form-group">
+        <label >Actor Picture</label>
+        <input type="file" class="form-control" (change)="onFileSelected($event)" >
+        <img [src]="path" alt="" id="myImg" class="rounded-circle">
+        <p id="item"></p>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Actor</button>
+    </form>
+
+  </div>
+</div>

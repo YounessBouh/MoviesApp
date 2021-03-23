@@ -1,0 +1,19 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-4" >
+       <div class="form-group" *ngFor="let category of categories">
+
+         <input type="text" [value]="category.name" class="form-control" disabled>
+         <button [routerLink]="['/UpdateCategory/'+category.categoryId]" class="btn btn-primary">Update</button> ||
+         <button (click)="Delete(category.categoryId)" class="btn btn-danger">Delete</button>
+
+       </div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+  </div>
+</div>

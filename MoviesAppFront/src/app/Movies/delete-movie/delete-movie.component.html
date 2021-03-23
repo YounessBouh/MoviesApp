@@ -1,0 +1,31 @@
+<div class="container" style="margin-top: 60px;">
+  <div class="row">
+
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Movie</th>
+            <th>Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movie of movies">
+            <td>
+              <img [src]="path+movie.picture" alt="" width="100" class="rounded-circle" >
+              <br>
+              <strong >{{movie.title}}</strong>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="Delete(movie.id)">Delete</button>
+              <button type="button" class="btn btn-info" routerLink="/UpdateMovie/{{movie.id}}">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
